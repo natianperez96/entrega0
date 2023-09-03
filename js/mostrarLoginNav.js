@@ -1,3 +1,4 @@
+//
 document.addEventListener("DOMContentLoaded", function () {
   let navbar = document.getElementById("navlist");
   let logoutNav = document.createElement("li");
@@ -7,17 +8,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   loginIn.classList.add("nav-item");
   const userEmail = localStorage.getItem("email");
+  const partes = userEmail.split("@");
+
   loginIn.innerHTML = `<link rel="stylesheet" href="css/usuario-logueado-nav.css">
   <div class="login-container">
-  <p id="email-p">${userEmail}</p>
+  <p id="email-p">${partes[0]}</p>
   <input type="image" src=${
     localStorage.getItem(`${userEmail}-icon`) ||
     "./iconos_perfil/foto-login-perfil.png"
   } id="perfil" class="foto-perfil-login">
     </input>
   <div class="tarjeta" id="tarjeta">
-      <a class="login-perfil">Perfil</a>
-  <button id="popup-cambio-img">Cambiar icono</button>
+      <a class="login-perfil nav-popup-boton">Perfil</a>
+   
+      <button id="popup-cambio-img" class="nav-popup-boton">Cambiar icono</button>
+
   <div class="popup-wrapper">
       <div id="popup-opciones" class="popup-img">
           <div class="popup-contenido">
@@ -68,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   </div>
                   </div>
                   </div>
-                  <p id="salir">logOut</p>
+                  <p id="salir" class="nav-popup-boton">logOut</p>
   </div>
 </div>
     <script src="login.js"<script>
@@ -98,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById("salir").addEventListener("click", function () {
     localStorage.removeItem("email");
-    //esto hay que cambiarlo
+    //! esto hay que cambiarlo
     location.reload();
   });
 });
@@ -108,10 +113,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const popup = document.getElementsByClassName("popup-wrapper")[0];
   const btnAbrirPopup = document.getElementById("popup-cambio-img");
   const btnCerrar = document.getElementsByClassName("cerrar")[0];
-  let iconos;
   btnAbrirPopup.addEventListener("click", function () {
     popup.style.display = "block";
-    iconos = document.getElementsByClassName("opcion-icono");
+    const iconos = document.getElementsByClassName("opcion-icono");
     console.log(typeof iconos);
     Object.values(iconos).forEach((button) => {
       button.addEventListener("click", function () {

@@ -20,9 +20,10 @@ function sortCategories(criteria, array) {
   });
 }
 
-//se guarda el id de la categoria en el localStorage y luego redirecciona a la pagina de la categoria
-function setCatID(id) {
+//se guarda el id y el catName de la categoria en el localStorage y luego redirecciona a la pagina de la categoria
+function setCatID(id, name) {
   localStorage.setItem("catID", id);
+  localStorage.setItem("catName", name);
   window.location = "products.html";
 }
 
@@ -37,7 +38,7 @@ function showCategoriesList() {
     )
     .map(
       (category) => `
-      <div onclick="setCatID(${category.id})" class="product-item list-product-item">
+      <div onclick="setCatID(${category.id},'${category.name}')" class="product-item list-product-item">
         <img src="${category.imgSrc}" alt="${category.description}">
         <h2 class="encabezado">${category.name}</h2>
         <div class="product-gradient"></div>

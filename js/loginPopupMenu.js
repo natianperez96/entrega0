@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Cargar foto usuario
   let fotoUsuario =
     localStorage.getItem(`${userEmail}-icon`) ||
-    "../img/iconos_perfil/desconocido.png";
+    "img/iconos_perfil/desconocido.png";
 
   // Crear elemento nav
   const loginNavElement = document.createElement("li");
@@ -37,35 +37,35 @@ document.addEventListener("DOMContentLoaded", () => {
   <div id="menu-cambiar-icono-container">
     <h2 id="menu-cambiar-icono-titulo">Elije un nuevo icono</h2>
     <div id="menu-cambiar-icono-opciones">
-      <button class="opcion-icono" data-icon="./img/iconos_perfil/hombre_(1).png">
-        <img src="../img/iconos_perfil/hombre_(1).png" />
+      <button class="opcion-icono" data-icon="img/iconos_perfil/hombre_(1).png">
+        <img src="img/iconos_perfil/hombre_(1).png" />
       </button>
-      <button class="opcion-icono" data-icon="./img/iconos_perfil/hombre_(2).png">
-        <img src="../img/iconos_perfil/hombre_(2).png" />
+      <button class="opcion-icono" data-icon="img/iconos_perfil/hombre_(2).png">
+        <img src="img/iconos_perfil/hombre_(2).png" />
       </button>
-      <button class="opcion-icono" data-icon="./img/iconos_perfil/hombre_(3).png">
-        <img src="../img/iconos_perfil/hombre_(3).png" />
+      <button class="opcion-icono" data-icon="img/iconos_perfil/hombre_(3).png">
+        <img src="img/iconos_perfil/hombre_(3).png" />
       </button>
-      <button class="opcion-icono" data-icon="./img/iconos_perfil/hombre.png">
-        <img src="../img/iconos_perfil/hombre.png" />
+      <button class="opcion-icono" data-icon="img/iconos_perfil/hombre.png">
+        <img src="img/iconos_perfil/hombre.png" />
       </button>
-      <button class="opcion-icono" data-icon="./img/iconos_perfil/usuario.png">
-        <img src="../img/iconos_perfil/usuario.png" />
+      <button class="opcion-icono" data-icon="img/iconos_perfil/usuario.png">
+        <img src="img/iconos_perfil/usuario.png" />
       </button>
-      <button class="opcion-icono" data-icon="./img/iconos_perfil/mujer_(1).png">
-        <img src="../img/iconos_perfil/mujer_(1).png" />
+      <button class="opcion-icono" data-icon="img/iconos_perfil/mujer_(1).png">
+        <img src="img/iconos_perfil/mujer_(1).png" />
       </button>
-      <button class="opcion-icono" data-icon="./img/iconos_perfil/mujer_(2).png">
-        <img src="../img/iconos_perfil/mujer_(2).png" />
+      <button class="opcion-icono" data-icon="img/iconos_perfil/mujer_(2).png">
+        <img src="img/iconos_perfil/mujer_(2).png" />
       </button>
-      <button class="opcion-icono" data-icon="./img/iconos_perfil/mujer_(3).png">
-        <img src="../img/iconos_perfil/mujer_(3).png" />
+      <button class="opcion-icono" data-icon="img/iconos_perfil/mujer_(3).png">
+        <img src="img/iconos_perfil/mujer_(3).png" />
       </button>
-      <button class="opcion-icono" data-icon="./img/iconos_perfil/mujer.png">
-        <img src="../img/iconos_perfil/mujer.png" />
+      <button class="opcion-icono" data-icon="img/iconos_perfil/mujer.png">
+        <img src="img/iconos_perfil/mujer.png" />
       </button>
-      <button class="opcion-icono" data-icon="./img/iconos_perfil/jugador.png">
-        <img src="../img/iconos_perfil/jugador.png" />
+      <button class="opcion-icono" data-icon="img/iconos_perfil/jugador.png">
+        <img src="img/iconos_perfil/jugador.png" />
       </button>
     </div>
   </div>

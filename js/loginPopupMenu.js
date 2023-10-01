@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const logoutBtn = document.getElementById("login-logout-btn");
   logoutBtn.addEventListener("click", () => {
     localStorage.removeItem("email");
-    window.location.href = "/login.html";
+    window.location.href = "login.html";
   });
 });
 

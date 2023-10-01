@@ -37,7 +37,7 @@ const cargarInfoProducto = (product, productCategoryName) => {
       const nuevaImagen = document.createElement("img");
       nuevaImagen.classList.add("image-producto");
       nuevaImagen.classList.add("card-img-top");
-      nuevaImagen.src = `img/prod${product.id}_${imagenActual}.jpg`;
+      nuevaImagen.src = `./img/prod${product.id}_${imagenActual}.jpg`;
       carruselProduct.appendChild(nuevaImagen);
 
       // Incrementa las imagenes y al llegar a la última regresa a la 1ra

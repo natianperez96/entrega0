@@ -163,6 +163,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   let showProducts = [...productfetch.data.relatedProducts]; //array de 2 productos relacionados
   console.log(productfetch.data.relatedProducts);
+  console.log(showProducts);
 
   //function en init
 
@@ -201,9 +202,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       colmd.appendChild(productoRelacionado);
       relatedProductsDiv.appendChild(colmd);
 
-      productoRelacionado.addEventListener("click", () => {
-        localStorage.setItem("productoClickeado", JSON.stringify(element));
-        window.location = "product-info.html";
+      productoRelacionado.addEventListener("click", async () => {
+        productObject = await getJSONData(`https://japceibal.github.io/emercado-api/products/${element.id}.json`);
+        console.log(productObject)
+        localStorage.setItem("productoClickeado", JSON.stringify(await productObject.data));
+        window.location.href = "product-info.html"
+
+        
       });
     });
   }

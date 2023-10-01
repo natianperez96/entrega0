@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Cargar foto usuario
   let fotoUsuario =
     localStorage.getItem(`${userEmail}-icon`) ||
-    "../img/iconos_perfil/desconocido.png";
+    "./img/iconos_perfil/desconocido.png";
 
   // Crear elemento nav
   const loginNavElement = document.createElement("li");

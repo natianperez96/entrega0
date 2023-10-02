@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
       nuevaImagen.id = `banner-${i}`;
       nuevaImagen.classList.add("banner");
       nuevaImagen.classList.add("card-img-top");
-      nuevaImagen.src = `/img/banners/banner_sales${i}.jpg`;
+      nuevaImagen.src = `./img/banners/banner_sales${i}.jpg`;
       carruselProduct.appendChild(nuevaImagen);
     }
   }

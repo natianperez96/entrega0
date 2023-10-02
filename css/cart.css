@@ -102,3 +102,12 @@
     flex-direction: column;
     gap: 10px;
 }
+
+.img-encabezado-cart{
+    background-image: url(../img/Carrito_banner.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 160px;
+    padding-left: 10%;
+    margin-top: 48px;
+}

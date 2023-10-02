@@ -14,6 +14,13 @@ body {
   align-items: center;
   transform: translateX(370px);
 }
+.img-encabezado-products {
+  margin-right: 35%;
+  position: absolute;
+  width: 100%;
+  height: 140px;
+  z-index: -1;
+}
 
 .img-encabezado {
   margin-right: 35%;

@@ -24,7 +24,7 @@
   background-color: #ffffffe9;
 }
 #modo-oscuro .img-encabezado{
-  background-image: url(../img/banner_categories_products_modoOscuro.jpg);
+  background-image: url(../img/banner_categories_products.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   height: 160px;
@@ -65,13 +65,40 @@
   color: black !important;
 } 
 
+.carrusel-container ul{
+  padding: unset;
+  margin: unset;
+}
+.carrusel-container{
+  position: relative;
+  min-height: 423px;
+  height: 100%;
+}
+.banner{
+  margin-top: 40px;
+  opacity: 0;
+  transition: all 1s ease-out;
+  position: absolute;
+}
+
+.banner-active{
+  opacity: 1;
+  transition: all 1s ease-out;
+  position: absolute;
+}
 
 .pb-5 {
   padding-bottom: 20px !important;
 }
-
+.img-encabezado-products {
+  background-image: url(../img/banner_categories_productos.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 160px;
+  padding-left: 10%;
+}
 .img-encabezado {
-  background-image: url(../img/banner_categories_products.png);
+  background-image: url(../img/banner_categories_products.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   height: 160px;
@@ -179,6 +206,9 @@
   font-size: 38px;
 }
 
+.row{
+  margin-top: 2% !important;
+}
 .navbar {
   padding: 10px 20px;
   position: fixed;

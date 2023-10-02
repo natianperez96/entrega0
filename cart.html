@@ -11,9 +11,13 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/font-awesome.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/products.css" rel="stylesheet" />
+    <link href="css/categories.css" rel="stylesheet" />
+    <link href="css/loginPopupMenu.css" rel="stylesheet" />
+    <link href="css/cart.css" rel="stylesheet" />
   </head>
 
-  <body>
+  <body id="modo-claro">
     <div id="contenido">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
         <div class="container">
@@ -28,9 +32,9 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav w-100 justify-content-between">
+            <ul class="navbar-nav w-100 justify-content-between" id="navlist">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Inicio</a>
+                <a class="nav-link active" href="index.html">Inicio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="categories.html">Categorías</a>
@@ -43,12 +47,9 @@
           </div>
         </div>
       </nav>
-      <main>
-        <div class="container">
-          <div class="alert alert-danger text-center" role="alert">
-            <h4 class="alert-heading texto-modo-oscuro">Funcionalidad en
-              desarrollo</h4>
-          </div>
+      <div class="img-encabezado-cart"></div>
+      <main class="pb-5 product-container">
+        <div class="productos-titulo">
         </div>
       </main>
       <footer class="text-muted">
@@ -77,8 +78,12 @@
       </div>
     </div>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
     <script src="js/init.js"></script>
     <script src="js/loginPopUp.js"></script>
+    <script src="js/loginPopupMenu.js"></script>
     <script src="js/cart.js"></script>
+    <script src="https://kit.fontawesome.com/fdc46ffa07.js"
+      crossorigin="anonymous"></script>
   </body>
 </html>

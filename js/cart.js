@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-// Crear elemento nav que contiene todo el HTML de la caja del carrito de compras
-const cartNavElement = document.createElement("li");
-cartNavElement.innerHTML = `
+  // Crear elemento nav que contiene todo el HTML de la caja del carrito de compras
+  const cartNavElement = document.createElement("li");
+  cartNavElement.innerHTML = `
     <div class="container">
         <div class="btn-menu">
             <label for="btn-menu" class=""nav-item"><i class="fa-solid fa-cart-shopping" style="color: #ffd6ff;"></i></label>    
@@ -27,12 +26,10 @@ cartNavElement.innerHTML = `
         </div>
     </div>
 `;
-cartNavElement.classList.add("nav-item");
-cartNavElement.id = "login-nav-li";
+  cartNavElement.classList.add("nav-item");
+  cartNavElement.id = "login-nav-li";
 
-//* Agregar elemento nav a navbar
-const navbar = document.getElementById("navlist");
-navbar.appendChild(cartNavElement);
-
+  //* Agregar elemento nav a navbar
+  const navbar = document.getElementById("navlist");
+  navbar.appendChild(cartNavElement);
 });
-

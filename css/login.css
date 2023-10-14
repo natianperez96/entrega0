@@ -12,6 +12,15 @@ body{
     display: flex;
     flex-direction: column;
 }
+
+@media (max-width: 500px) {
+    body{
+        background-color: rgba(255, 255, 255, 0.434);
+        background-repeat: repeat;
+        background-size: cover;
+    }
+}
+
 .page-wrapper{
     height: 100%;
     display: flex;
@@ -20,11 +29,9 @@ body{
     align-items: flex-end
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     .page-wrapper {
-      margin: 0;
-      margin-left: -10px;
-      height: 80%;
+      margin: 10px;
       align-items: center;
     }
   }
@@ -38,6 +45,14 @@ body{
     padding: 20px;
     height: 370px;
 }
+
+@media (max-width: 500px) {
+    .formulario_login{
+        width: 380px;
+        padding: 10px;
+        height: 350px;
+    }
+  }
 .formulario{
     display: flex;
     max-width: 400px;
@@ -46,6 +61,15 @@ body{
     flex-direction: column;
 row-gap: 20px;
 }
+
+@media (max-width: 500px) {
+    .formulario{
+        max-width: 350px;
+        padding: 15px;
+        row-gap: 10px;
+    }
+  }
+
 .form-container{
     padding-inline: 10px;
     width: 100%;
@@ -62,6 +86,7 @@ row-gap: 20px;
     flex-direction: column;
     justify-content: center;
 }
+
 .formulario_login h1{
     font-size: 40px;
 text-align: center;

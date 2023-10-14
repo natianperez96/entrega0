@@ -15,10 +15,20 @@ body{
 .page-wrapper{
     height: 100%;
     display: flex;
-    margin-left: 10%;
+    margin: 10%;
     margin-bottom: 7%;
     align-items: flex-end
 }
+
+@media (max-width: 400px) {
+    .page-wrapper {
+      margin: 0;
+      margin-left: -10px;
+      height: 80%;
+      align-items: center;
+    }
+  }
+
 .formulario_login{
     background-color: rgba(255, 255, 255, 0.434);
     width: 420px;

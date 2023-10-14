@@ -20,32 +20,38 @@
 
   <body>
     <main class="page-wrapper">
-      <div class="content-wrapper">
-        <div class="formulario_login">
-          <h1>Log in</h1>
-          <div class="form-container">
-            <div class="formulario">
-              <input class="form-input" type="email" name="correo" required
-                id="mailuser" placeholder="Email address" />
-              <div class="contraseña-container">
-                <div class="contraseña-input">
-                  <input class="form-input" type="password" name="password"
-                    id="passwordUser" required placeholder="Password" />
-                  <button class="form-bottom" id="mostrarContraseña">👁️</button>
-                </div>
+      <div class="container">
+          <div class="row mt-5">
+              <div class="col-lg-4 col-md-6 col-sm-8 col-xs-12">
+                  <div class="formulario_login">
+                      <h1 class="text-center">Inicio de sesión</h1>
+                      <div class="form-container">
+                          <div class="formulario">
+                              <input class="form-control mb-3" type="email" name="correo" required id="mailuser"
+                                  placeholder="Email address" />
+                              <div class="contraseña-container">
+                                  <div class="input-group mb-3">
+                                      <input class="form-control" type="password" name="password" id="passwordUser"
+                                          required placeholder="Password" />
+                                      <div class="input-group-append">
+                                          <button class="btn btn-outline-secondary" type="button"
+                                              id="mostrarContraseña">👁️</button>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="form-check mb-3">
+                                  <input type="checkbox" class="form-check-input" id="recordarme" />
+                                  <label class="form-check-label" for="recordarme">Recordar mi correo</label>
+                              </div>
+                              <button class="btn btn-primary btn-block" id="loginbutton">Login</button>
+                          </div>
+                      </div>
+                  </div>
               </div>
-              <div class="form-check">
-                <input type="checkbox" class="checkbox-recordarme"
-                  id="recordarme" />
-                <label class="form-check-label" for="recordarme">Recordar mi
-                  mail</label>
-              </div>
-              <button id="loginbutton">Login</button>
-            </div>
           </div>
-        </div>
       </div>
-    </main>
+  </main>
     <script src="js/login.js"></script>
   </body>
 </html>
+

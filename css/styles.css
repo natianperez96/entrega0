@@ -65,26 +65,26 @@
   color: black !important;
 } 
 
-.carrusel-container ul{
-  padding: unset;
-  margin: unset;
-}
 .carrusel-container{
-  position: relative;
-  min-height: 423px;
-  height: 100%;
+  padding-top: 48px;
 }
+.carrusel-container ul{
+  padding: 0;
+  margin: 0;
+}
+.carrusel-container ul li{
+  padding: 0;
+  margin: 0;
+}
+
 .banner{
-  margin-top: 40px;
-  opacity: 0;
+  display: none;
   transition: all 1s ease-out;
-  position: absolute;
 }
 
 .banner-active{
-  opacity: 1;
+  display: block;
   transition: all 1s ease-out;
-  position: absolute;
 }
 
 .pb-5 {
@@ -210,11 +210,11 @@
   margin-top: 2% !important;
 }
 .navbar {
-  padding: 10px 20px;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
+  padding: 10px 20px;
+  z-index: 10;
 }
 
 nav a {
@@ -422,4 +422,91 @@ main {
 /* filtro de categories.js que se encarga de crearlo y eliminarlo dependiendo de la condicion */
 .filtro {
   display: none !important;
+}
+
+/* #carouselExampleDark {
+    max-width: 1000px; 
+    height: 1400px;    
+} */
+
+.carousel-inner{
+  position: relative;
+  left: 20px;
+}
+
+/* .containerCarrusel{
+  width: 800px;
+  position: relative;
+  left: 60rem;
+  bottom: 460px;
+} */
+
+/* .containerCarrusel{
+  width: 800px;
+  position: relative;
+  left: 60rem;
+  bottom: 460px;
+} */
+
+/* #contenido{
+  height: 700px;
+}
+
+.carousel-control-prev-icon{
+  position: relative;
+  top:220px;
+}
+
+.carousel-control-next-icon{
+  position: relative;
+  top:220px;
+}
+ */
+.carouselimg{
+  padding-right: 36px;
+}
+
+ @media (min-width: 1540px) {
+  .carouselimg{
+    height: 600px;
+    object-fit: cover;
+}
+ }
+
+ @media (min-width:1540px) and (max-width: 1669px) {
+  .carouselimg{
+    height: 510px;
+    object-fit: cover;
+
+}
+ }
+
+
+
+@media (max-width: 768px) {
+  /* Ajusta el tamaño de las imágenes para pantallas más grandes */
+  .carru-cont{
+    display: flex;
+    width: 63%;
+    flex-wrap: wrap;
+    /* margin: 10px; */
+    margin-top: 5%;
+    padding-top:2%;
+   }
+}
+
+@media (max-width: 1024px) {
+  /* Ajusta el tamaño de las imágenes para pantallas más grandes */
+  .carru-cont{
+    display: flex;
+    /* width: 63%; */
+    flex-wrap: wrap;
+    /* margin: 10px; */
+    margin-top: 5%;
+    padding-top:2%;
+   }
+}
+
+.productos-relacionados{
+  padding-bottom: 20px;
 }

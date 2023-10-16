@@ -49,8 +49,77 @@
       </nav>
       <div class="img-encabezado-cart"></div>
       <main class="pb-5 product-container">
-        <div class="productos-titulo">
+        <!--
+        <div class="productos-titulo-cart">
+          <div id="img-coming-soon">
+            <img src="./img/5142880.jpg" alt="img-coming-soon"
+              style="max-width: 100%; height: auto;" />
+          </div>
+        </main>
+        --> <div>
+          <div id="contenedor"></div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Costo</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Subtotal</th>
+              </tr>
+            </thead>
+            <tbody id="lista-productos-compra">
+            </tbody>
+          </table>
         </div>
+
+        <hr>
+        <form class="needs-validation" novalidate>
+          <p class="label-envio titulo-cart">Tipo de envio</p>
+          <div class="tipoEnvio">
+            <input type="radio" id="premium" name="envio" value="15" checked />
+            <label for="premium">Premium: 2 a 5 días (15%)</label>
+            <br>
+            <input type="radio" id="express" name="envio" value="7" />
+            <label for="express">Express: 5 a 8 días (7%)</label>
+            <br>
+            <input type="radio" id="standard" name="envio" value="5" />
+            <label for="standard">Standard: 12 a 15 días (5%)</label>
+          </div>
+
+          <p class="lead mt-4 titulo-cart">Direccion de envio</p>
+          <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 mt-2">
+              <label class="form-label" for="calle">Calle:</label><br>
+              <input class="form-control" type="text" id="calle"
+                style="min-width: 80%" required />
+            </div>
+            <br>
+            <div class="col-lg-6 col-md-12 col-sm-12 mt-2">
+              <label class="form-label" for="numero">Numero:</label><br>
+              <input class="form-control" type="text" id="numero"
+                style="min-width: 50%;" required />
+            </div>
+
+            <div class="col-lg-6 col-md-12 col-sm-12 mt-3">
+              <label class="form-label" for="esquina">Esquina:</label><br>
+              <input class="form-control" type="text" id="esquina"
+                style="min-width: 80%" required />
+            </div>
+          </div>
+          <hr>
+          <br>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+
+          <button id="finalizarCompra" type="submit" class="btn btn-primary">
+            Finalizar compra</button>
+          <div id="alertPlaceHolder">
+          </div>
+        </form>
       </main>
       <footer class="text-muted">
         <div class="container">
@@ -58,7 +127,8 @@
             <a href="#">Volver arriba</a>
           </p>
           <p>Este sitio forma parte de <a
-              href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a
+              href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes
+              a
               Programar</a></p>
         </div>
       </footer>

@@ -19,15 +19,24 @@ document.addEventListener("DOMContentLoaded", function () {
   const carruselProduct = document.getElementById("carruselProducto");
 
   function crearCarrusel() {
+
+    
     for (let i = 1; i <= 4; i++) {
+      //Es necesrio que la imagen esté dentro de un elemento <li>
+      const nuevoLi = document.createElement("li"); 
+
       const nuevaImagen = document.createElement("img");
-      nuevaImagen.id = `banner-${i}`;
-      nuevaImagen.classList.add("banner");
       nuevaImagen.classList.add("card-img-top");
       nuevaImagen.src = `./img/banners/banner_sales${i}.jpg`;
-      carruselProduct.appendChild(nuevaImagen);
+
+      nuevoLi.appendChild(nuevaImagen);
+      nuevoLi.id = `banner-${i}`;
+      nuevoLi.classList.add("banner");
+
+      carruselProduct.appendChild(nuevoLi);
     }
   }
+
   let bannerActivo;
   function cambiarImagenCarrusel() {
     let imagenActual = 1; // Inicialmente, muestra la primera imagen

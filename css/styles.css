@@ -64,7 +64,9 @@
 #modo-oscuro .mo-texto-negro {
   color: black !important;
 } 
-
+#modo-oscuro .cart-container{
+  background-color: #131313;
+}
 .carrusel-container{
   padding-top: 48px;
 }
@@ -210,15 +212,21 @@
   margin-top: 2% !important;
 }
 .navbar {
+  padding: 10px 20px;
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 10px 20px;
-  z-index: 10;
+  z-index: 1000;
 }
 
 nav a {
   text-decoration: none;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 50px;
 }
 
 .navbar ul li {
@@ -466,6 +474,16 @@ main {
   padding-right: 36px;
 }
 
+ .carru-cont{
+  display: flex;
+  width: 63%;
+  /* flex-wrap: wrap; */
+  /* margin: 10px; */
+  margin-top: 5%;
+  padding-top:2%;
+ }
+
+
  @media (min-width: 1540px) {
   .carouselimg{
     height: 600px;
@@ -509,4 +527,19 @@ main {
 
 .productos-relacionados{
   padding-bottom: 20px;
+}
+
+.fa-trash{
+  position: relative;
+  top: 10px;
+  border:2px solid rgb(255, 89, 89);
+  color:rgb(255, 89, 89);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.fa-trash:hover{
+  color:red;
+  border:2px solid red;
+
 }

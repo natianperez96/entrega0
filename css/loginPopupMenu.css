@@ -1,20 +1,3 @@
-/* Navbar li element */
-#login-nav-li {
-  height: 40px;
-  overflow: hidden;
-}
-
-#cart-nav-li {
-  margin-left: -180px;
-}
-
-/* La propiedad anterior de margen no se aplica en pantallas pequeñas, ya que si lo hace
-el elemento se sale de vista en la pantalla */
-@media screen and (max-width: 1200px) {
-  #cart-nav-li {
-    margin-left: 0;
-  }
-}
 
 #login-nav-li img{
   display: inline-block;

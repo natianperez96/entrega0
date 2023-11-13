@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", async () => {
   let radioEnvio = document.getElementById("formEnvio");
-  
+
   const cartNavElement = document.createElement("li");
-cartNavElement.innerHTML = `
+  cartNavElement.innerHTML = `
     <div class="container">
         <div class="btn-menu">
             <label for="btn-menu" class="nav-item">
@@ -13,13 +13,12 @@ cartNavElement.innerHTML = `
         </div>
     </div>
 `;
-cartNavElement.classList.add("nav-item");
-cartNavElement.id = "cart-nav-li";
+  cartNavElement.classList.add("nav-item");
+  cartNavElement.id = "cart-nav-li";
 
-//* Agregar elemento nav a navbar
-const navbar = document.getElementById("navlist");
-navbar.appendChild(cartNavElement);
-
+  //* Agregar elemento nav a navbar
+  const navbar = document.getElementById("navlist");
+  navbar.appendChild(cartNavElement);
 
   /*
   const cartNavElement = document.createElement("li");
@@ -55,7 +54,7 @@ navbar.appendChild(cartNavElement);
   const navbar = document.getElementById("navlist");
   navbar.appendChild(cartNavElement);
 */
- 
+
   const agregarAlCarritoButton = document.getElementById(
     "agregarAlCarritoButton"
   );
@@ -334,123 +333,138 @@ async function actualizarTotal() {
   spanTotal.textContent = "USD " + total;
 }
 
-
 //Validación del contenido del formulario de envío
 document.addEventListener("DOMContentLoaded", () => {
   const forms = document.querySelectorAll(".needs-validation");
 
   function mostrarAlertaModal(modalID) {
-    $(modalID).modal('show');
+    $(modalID).modal("show");
   }
-  
+
   Array.from(forms).forEach((form) => {
     form.addEventListener(
-        "submit",
-        (e) => {
-            const formularioValido = form.checkValidity();
-            const productosCarrito = JSON.parse(localStorage.getItem("productosCarrito"));
+      "submit",
+      (e) => {
+        const formularioValido = form.checkValidity();
+        const productosCarrito = JSON.parse(
+          localStorage.getItem("productosCarrito")
+        );
 
-            if (!formularioValido) {
-                e.preventDefault();
-                e.stopPropagation();
-                metodoPagoError.style.display = "block"; // Mostrar el mensaje de error
-                mostrarAlertaModal('#customModalErrorValidaciones'); // Muestra el modal de validaciones
-            } else if (!productosCarrito || productosCarrito.length === 0) {
-                e.preventDefault();
-                e.stopPropagation();
-                mostrarAlertaModal('#customModalErrorProductos'); // Muestra el modal de productos vacíos
-            } else {
-                sessionStorage.setItem("formSubmitted", "true");
-            }
-
-            form.classList.add("was-validated");
-        },
-        false
-    );
-});
-
-const cerrarPago = document.getElementById("noGuardarPago");
-const guardarPago = document.getElementById("guardarPago");
-const metodoPagoError = document.getElementById("metodoPagoError");
-
-
-guardarPago.addEventListener("click", function(e) {
-    manejarEvento(e);
-});
-
-function manejarEvento(e) {
-    let metodoPagoSeleccionado = document.querySelector('input[name="metodoPago"]:checked');
-    
-    if (metodoPagoSeleccionado) {
-        // Obtener el div padre del radio button seleccionado
-        let divPadre = metodoPagoSeleccionado.closest('.form-check');
-
-        // Obtener el campo de entrada dentro del div
-        let inputMetodoPago = divPadre.querySelector('.input-pago');
-
-        if (inputMetodoPago && inputMetodoPago.value.trim() !== "") {
-            // Enviar el formulario y guardar la info en session storage
-            guardarPago.setAttribute("data-dismiss", "modal");
-            metodoPagoError.style.display = "none"; // Ocultar el mensaje de error
-            sessionStorage.setItem("Validacion","true");
+        if (!formularioValido) {
+          e.preventDefault();
+          e.stopPropagation();
+          metodoPagoError.style.display = "block"; // Mostrar el mensaje de error
+          mostrarAlertaModal("#customModalErrorValidaciones"); // Muestra el modal de validaciones
+        } else if (!productosCarrito || productosCarrito.length === 0) {
+          e.preventDefault();
+          e.stopPropagation();
+          mostrarAlertaModal("#customModalErrorProductos"); // Muestra el modal de productos vacíos
         } else {
-            // Mostrar el mensaje de error y evitar que se cierre el modal
-            metodoPagoError.style.display = "block"; // Mostrar el mensaje de error
-            e.preventDefault();
-            e.stopPropagation();
+          sessionStorage.setItem("formSubmitted", "true");
         }
-    } else {
+
+        form.classList.add("was-validated");
+      },
+      false
+    );
+  });
+
+  const cerrarPago = document.getElementById("noGuardarPago");
+  const guardarPago = document.getElementById("guardarPago");
+  const metodoPagoError = document.getElementById("metodoPagoError");
+
+  guardarPago.addEventListener("click", function (e) {
+    manejarEvento(e);
+  });
+
+  function manejarEvento(e) {
+    let metodoPagoSeleccionado = document.querySelector(
+      'input[name="metodoPago"]:checked'
+    );
+
+    if (metodoPagoSeleccionado) {
+      // Obtener el div padre del radio button seleccionado
+      let divPadre = metodoPagoSeleccionado.closest(".form-check");
+
+      // Obtener el campo de entrada dentro del div
+      let inputMetodoPago = divPadre.querySelector(".input-pago");
+
+      if (inputMetodoPago && inputMetodoPago.value.trim() !== "") {
+        // Enviar el formulario y guardar la info en session storage
+        guardarPago.setAttribute("data-dismiss", "modal");
+        metodoPagoError.style.display = "none"; // Ocultar el mensaje de error
+        sessionStorage.setItem("Validacion", "true");
+      } else {
         // Mostrar el mensaje de error y evitar que se cierre el modal
         metodoPagoError.style.display = "block"; // Mostrar el mensaje de error
         e.preventDefault();
         e.stopPropagation();
+      }
+    } else {
+      // Mostrar el mensaje de error y evitar que se cierre el modal
+      metodoPagoError.style.display = "block"; // Mostrar el mensaje de error
+      e.preventDefault();
+      e.stopPropagation();
     }
-}
+  }
 
-const inputMetodoPago = document.getElementsByName("metodoPago");
-const inputPagoTarjeta = document.getElementById("inputPagoTarjeta");
-const inputPagoTarjeta2 = document.getElementById("inputPagoTarjeta2");
-const inputPagoTarjeta3 = document.getElementById("inputPagoTarjeta3");
-const inputPagoTarjeta4 = document.getElementById("inputPagoTarjeta4");
-const inputPagoPaypal = document.getElementById("inputPagoPaypal");
-const inputPagoPaypal2 = document.getElementById("inputPagoPaypal2");
-const inputPagoTransferencia2 = document.getElementById("inputPagoTransferencia2");
-const inputPagoTransferencia = document.getElementById("inputPagoTransferencia");
-const inputPagoRedes1 = document.getElementById("inputPagoRedes1");
-const inputPagoRedes2 = document.getElementById("inputPagoRedes2");
+  const inputMetodoPago = document.getElementsByName("metodoPago");
+  const inputPagoTarjeta = document.getElementById("inputPagoTarjeta");
+  const inputPagoTarjeta2 = document.getElementById("inputPagoTarjeta2");
+  const inputPagoTarjeta3 = document.getElementById("inputPagoTarjeta3");
+  const inputPagoTarjeta4 = document.getElementById("inputPagoTarjeta4");
+  const inputPagoPaypal = document.getElementById("inputPagoPaypal");
+  const inputPagoPaypal2 = document.getElementById("inputPagoPaypal2");
+  const inputPagoTransferencia2 = document.getElementById(
+    "inputPagoTransferencia2"
+  );
+  const inputPagoTransferencia = document.getElementById(
+    "inputPagoTransferencia"
+  );
+  const inputPagoRedes1 = document.getElementById("inputPagoRedes1");
+  const inputPagoRedes2 = document.getElementById("inputPagoRedes2");
 
-// Verificar el input seleccionado y chequear que tenga contenido 
-inputMetodoPago.forEach(input => {
-  input.addEventListener("change", function() {
+  // Verificar el input seleccionado y chequear que tenga contenido
+  inputMetodoPago.forEach((input) => {
+    input.addEventListener("change", function () {
       // Deshabilitar todos los campos de entrada y quitar el atributo 'required'
-      [inputPagoTarjeta2, inputPagoTarjeta3, inputPagoTarjeta4, inputPagoPaypal2, inputPagoTransferencia2, inputPagoRedes1, inputPagoRedes2].forEach(input => {
-          input.disabled = true;
-          input.value = "";
-          input.removeAttribute("required");
+      [
+        inputPagoTarjeta2,
+        inputPagoTarjeta3,
+        inputPagoTarjeta4,
+        inputPagoPaypal2,
+        inputPagoTransferencia2,
+        inputPagoRedes1,
+        inputPagoRedes2,
+      ].forEach((input) => {
+        input.disabled = true;
+        input.value = "";
+        input.removeAttribute("required");
       });
 
       // Habilitar los campos de entrada correspondientes al método de pago seleccionado y agregar el atributo 'required'
       if (inputPagoTarjeta.checked) {
-          [inputPagoTarjeta2, inputPagoTarjeta3, inputPagoTarjeta4].forEach(input => {
-              input.disabled = false;
-              input.setAttribute("required", "true");
-          });
+        [inputPagoTarjeta2, inputPagoTarjeta3, inputPagoTarjeta4].forEach(
+          (input) => {
+            input.disabled = false;
+            input.setAttribute("required", "true");
+          }
+        );
       } else if (inputPagoPaypal.checked) {
-          inputPagoPaypal2.disabled = false;
-          inputPagoPaypal2.setAttribute("required", "true");
+        inputPagoPaypal2.disabled = false;
+        inputPagoPaypal2.setAttribute("required", "true");
       } else if (inputPagoTransferencia.checked) {
-          inputPagoTransferencia2.disabled = false;
-          inputPagoTransferencia2.setAttribute("required", "true");
+        inputPagoTransferencia2.disabled = false;
+        inputPagoTransferencia2.setAttribute("required", "true");
       } else if (input.value === "abitab") {
-          inputPagoRedes1.disabled = false;
-          inputPagoRedes1.setAttribute("required", "true");
+        inputPagoRedes1.disabled = false;
+        inputPagoRedes1.setAttribute("required", "true");
       } else if (input.value === "redpagos") {
         inputPagoRedes2.disabled = false;
         inputPagoRedes2.setAttribute("required", "true");
       }
+    });
   });
-});
-
 
   // Verificar si el formulario se ha enviado correctamente
   const formSubmitted = sessionStorage.getItem("formSubmitted");
@@ -463,7 +477,7 @@ inputMetodoPago.forEach(input => {
 
     // Agregar un evento al botón "Aceptar"
     const acceptButton = document.getElementById("accept-button");
-    acceptButton.addEventListener("click", function() {
+    acceptButton.addEventListener("click", function () {
       // Ocultar la alerta al hacer clic en "Aceptar"
       $(".alert").alert("close");
     });
@@ -489,3 +503,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+document
+  .getElementById("inputPagoTarjeta2")
+  .addEventListener("input", function () {
+    const cardNumber = this.value.replace(/\D/g, ""); // Remove non-numeric characters
+    const cardImageContainer = document.getElementById("cardImageContainer");
+
+    // Determine the card type based on the card number (you can add more card types as needed)
+    let cardType = "unknown";
+    if (/^4[0-9]{12}(?:[0-9]{3})?$/.test(cardNumber)) {
+      cardType = "visa";
+    } else if (/^5[1-5][0-9]{14}$/.test(cardNumber)) {
+      cardType = "mastercard";
+    } else if (/^3[47][0-9]{13}$/.test(cardNumber)) {
+      cardType = "amex";
+    }
+
+    // Set the appropriate card image
+    cardImageContainer.innerHTML = `<img src="${cardType}.png" alt="${cardType}">`;
+  });
